@@ -1,8 +1,5 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import type { SyllabusData, ParsedSyllabusResponse } from '../types';
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const syllabusSchema = {
   type: Type.OBJECT,
@@ -82,6 +79,7 @@ export const generateSyllabus = async (
   courseDescription: string,
   numWeeks: number
 ): Promise<SyllabusData> => {
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const model = "gemini-2.5-flash";
 
   const prompt = `
@@ -159,6 +157,7 @@ const toBase64 = (file: File): Promise<string> => new Promise((resolve, reject) 
 });
 
 export const parseSyllabusFromFile = async (file: File): Promise<ParsedSyllabusResponse> => {
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const base64File = await toBase64(file);
 
     const filePart = {

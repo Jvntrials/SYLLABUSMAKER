@@ -1,0 +1,5 @@
+{
+  "name": "Syllabus Generator",
+  "description": "An application to help instructors generate a comprehensive subject syllabus using AI. Users can input a subject title, course description, and the number of weeks to dynamically create Program Intended Learning Outcomes (PILOs) and a full weekly syllabus table. The generated syllabus is editable and can be exported to an XLSX file.",
+  "requestFramePermissions": []
+}
